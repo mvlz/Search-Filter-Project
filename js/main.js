@@ -24,17 +24,19 @@ function renderMusics(musics, filters) {
     musicContainer.innerHTML = "";
     filteredMusics.forEach(item => {
         const musicDiv = document.createElement("div");
-        musicDiv.classList.add("music-item", "w-1/6", "h-1/3", "rounded-xl", "relative");
+        musicDiv.classList.add("music-item", "w-1/6", "rounded-xl", "relative");
         musicDiv.innerHTML = `
-        <div class="music-img w-full h-2/3 overflow-hidden rounded-xl">
+        <div class="music-img w-full h-3/4 overflow-hidden rounded-xl">
             <img src=${item.image} alt="" class="w-full">
         </div>
-        <div class="music-inf w-full h-1/3 p-2">
-            <h3 class="music-name">${item.title}</h3>
-            <p class="music-singer">${item.singer}</p>
-            <p class="music-timeline text-right">${item.duration}</p>
+        <div class="music-inf w-full h-1/4 p-2 flex flex-col justify-between">
+            <h3 class="music-name text-sm">${item.title}</h3>
+            <div class="flex justify-between">
+                <p class="music-singer text-gray-400">${item.singer}</p>
+                <p class="music-timeline text-right text-gray-500 pr-2">${item.duration}</p>
+            </div>
         </div>
-        <button class="play-btn w-10 h-10 rounded-full bg-purple-800 fas fa-play fa-lg absolute bottom-1/4 right-4"></button>
+        <button class="play-btn w-10 h-10 rounded-full bg-purple-800 fas fa-play fa-lg absolute bottom-7 right-3"></button>
         `;
         musicContainer.appendChild(musicDiv);
     });

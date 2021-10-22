@@ -6,50 +6,97 @@
 body {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(45deg, #222222 80%, #575757);
     /* background-image: linear-gradient( 135deg, #cdabea, #6d63cc, #b75ba7 ); */
     font-size: 62.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    background-image: url('https://www.pngfind.com/pngs/b/6-68803_soundwave-transparent-png-soundwave-png-png-download.png');
+    background-color: #222222;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-y: center;
 }
 
+body::before {
+    content: '';
+    /* background-image: linear-gradient(45deg, #222222c9 80%, #575757c9); */
+    position: absolute;
+    width: calc(100% + 1rem);
+    height: calc(100% + 1rem);
+    z-index: -1;
+    left: -1rem;
+    top: -1rem;
+    background-color: #2222229d;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #161616;
+    border-radius: 10px;
+  }
+
 .header {
-    /* background-color: burlywood; */
     height: 4rem;
     width: 100%;
 }
 
 .container {
-    /* background-color: cadetblue; */
     height: calc(100% - 4rem);
 }
 
-.main-content {
-    /* background-color: coral; */
+.musics-content,
+.music-style-list {
+    background-image: linear-gradient(30deg, rgb(44 44 44 / 30%), rgb(44 44 44 / 60%));
+    /* background-image: linear-gradient(
+        27deg, #a7a20c, #ff000066); */
+    backdrop-filter: blur(8px);
+    border: 2px solid #404040;
+
+    background-image: linear-gradient(225deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 15%));
+    /* background-image: linear-gradient( 
+        27deg, #a7a20c, #ff000066); */
+    backdrop-filter: blur(8px);
+    border: 2px solid #ffffff29;
 }
 
-.right-sidebar {
-    /* background-color: darkolivegreen; */
+.music-style-list {
+    width: 7rem;
 }
 
-.musics-content {
-    background-image: linear-gradient(45deg, #2c2c2c, transparent);
-}
-
-.tab-bar {
-    /* background-color: darkgreen; */
-}
 
 .play-list {
-    background-color: coral;
-
+    background-color: #000000b2;
+    backdrop-filter: blur(5px);
+    color: white;
+    overflow-x: hidden;
 }
-
+.list-container{
+    max-width: 100%;
+    overflow-x: auto;
+}
+.play-list-item{
+    min-width: 4rem;
+}
 .top-music {
-    background-color: violet;
+    background-color: #000000b2;
+    backdrop-filter: blur(5px);
+    color: white;
 }
 
 .music-player {
-    background-color: tomato;
+    background-color: #000000b2;
+    backdrop-filter: blur(5px);
+    color: white;
 }
 
 
@@ -59,22 +106,42 @@ body {
     color: #838383;
     outline: none;
 }
-.btn.active, .btn:focus {
-    background-image: linear-gradient(90deg, #303030, #282828);
-    border-image-source: linear-gradient(0deg, #5b21b6, #7621b6);
-    border-image-slice: 1;
-    border-left: 5px solid;
-    color: white ;
+
+.btn.active,
+.btn:focus {
+    /* background-image: linear-gradient(90deg, #303030, #282828); */
+    /* border-image-source: linear-gradient(0deg, #5b21b6, #7621b6); */
+    /* border-image-slice: 1;
+    border-left: 5px solid; */
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.2s;
 }
 
-.style-item{
+.btn.active::before, .btn:focus::before {
+    content: '';
+    position: absolute;
+    left: -0.25rem;
+    height: 2.75rem;
+    width: 0.25rem;
+    background-color: #5b21b6;
+    border-radius: 50px;
+    box-shadow: 0px 0px 18px 2px #5b21b6;
+}
+
+/* 
+.style-item {
     border-radius: 5px 0px 0px 5px;
     overflow: hidden;
-}
+} */
+
 .music-item {
     color: whitesmoke;
     background-color: #2c2c2c;
     box-shadow: 0px 20px 12px -10px #1b1b1b;
+    height: 12rem;
 }
 
 .music-img {
@@ -82,35 +149,42 @@ body {
 }
 
 .play-btn {
-    box-shadow: 0px 0px 30px 2px #5a21b6;
+    box-shadow: 0px 0px 35px 4px #5a21b6;
     transition: all ease 0.1s;
 }
+
 .play-btn:hover {
     transform: scale(1.15);
 }
-.notification{
+
+.notification {
     background-color: #242424;
     border-radius: 8px;
-    box-shadow: 0px 0px 30px 2px #181818;
+    box-shadow: 0px 0px 40px 2px #0c0c0c;
     color: white;
     position: relative;
 }
-.notification::before{
+
+.notification::before {
     content: '';
     position: absolute;
-    left: -0.25rem;
-    top: -0.25rem;
-    width: 0.75rem;
-    height: 0.75rem;
+    right: -0.25rem;
+    top: -0.15rem;
+    width: 0.65rem;
+    height: 0.65rem;
     border-radius: 20px;
-    background-color: tomato;
+    background-color: blueviolet;
+}
+.notification path{
+    fill: #838383;
 }
 
-.searchbox{
+.searchbox {
     background-color: #303030;
     color: white;
 }
-.search-input{
+
+.search-input {
     font-family: segoe ui;
     font-size: 0.75rem !important;
 }
