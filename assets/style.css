@@ -56,15 +56,17 @@ body {
 .style-item .btn {
     font-size: 1rem;
     font-weight: 500;
-    color: white;
+    color: #838383;
+    outline: none;
 }
-.btn.active {
+.btn.active, .btn:focus {
     background-image: linear-gradient(90deg, #303030, #282828);
     border-image-source: linear-gradient(0deg, #5b21b6, #7621b6);
     border-image-slice: 1;
     border-left: 5px solid;
-    color: #8235fd ;
+    color: white ;
 }
+
 .style-item{
     border-radius: 5px 0px 0px 5px;
     overflow: hidden;
@@ -81,6 +83,10 @@ body {
 
 .play-btn {
     box-shadow: 0px 0px 30px 2px #5a21b6;
+    transition: all ease 0.1s;
+}
+.play-btn:hover {
+    transform: scale(1.15);
 }
 .notification{
     background-color: #242424;
@@ -92,10 +98,19 @@ body {
 .notification::before{
     content: '';
     position: absolute;
-    left: -0.5rem;
-    top: -0.5rem;
-    width: 1rem;
-    height: 1rem;
+    left: -0.25rem;
+    top: -0.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 20px;
     background-color: tomato;
+}
+
+.searchbox{
+    background-color: #303030;
+    color: white;
+}
+.search-input{
+    font-family: segoe ui;
+    font-size: 0.75rem !important;
 }

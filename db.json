@@ -1,0 +1,100 @@
+{
+    "items":[
+        {
+          "id": 1,
+          "title": "Easy On Me",
+          "category":"pop",
+          "singer": "Adele",
+          "duration": "03:44",
+          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+        },
+        {
+          "id": 2,
+          "title": "Qabil",
+          "category":"rap",
+          "singer": "Pishro",
+          "duration": "03:33",
+          "image": "https://top1musics.ir/wp-content/uploads/2021/10/Reza%20Pishro%20-%20Ghabil.jpg"
+        },
+        {
+          "id": 3,
+          "title": "Wildest Dreams",
+          "category":"pop",
+          "singer": "Taylor Swift",
+          "duration": "03:24",
+          "image": "https://linkstorage.linkfire.com/medialinks/images/61cb85f9-f65d-4dca-95e2-5cccd43b846b/artwork-440x440.jpg"
+        },
+        {
+          "id": 4,
+          "title": "Sweet Love",
+          "category":"pop",
+          "singer": "Little Mix",
+          "duration": "03:41",
+          "image": "https://images.genius.com/8dfa2d7d541a4281fc5087b359861895.1000x1000x1.jpg"
+        },
+        {
+          "id": 5,
+          "title": "Koja Boodi",
+          "category":"classical",
+          "singer": "Mohsen Chavoshi",
+          "duration": "03:44",
+          "image": "https://sakhamusic.ir/wp-content/uploads/2021/10/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D8%A2%D9%87%D9%86%DA%AF-%D9%85%D8%AD%D8%B3%D9%86-%DA%86%D8%A7%D9%88%D8%B4%DB%8C-%DA%A9%D8%AC%D8%A7-%D8%A8%D9%88%D8%AF%DB%8C.jpg"
+        },
+        {
+          "id": 6,
+          "title": "Easy On Me",
+          "category":"pop",
+          "singer": "Adele",
+          "duration": "03:44",
+          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+        },
+        {
+          "id": 7,
+          "title": "Oxygen",
+          "category":"hiphop",
+          "singer": "TM Bax",
+          "duration": "02:53",
+          "image": "https://www.topseda.ir/wp-content/uploads/2021/01/%20TM%20Bax%20-%20Oxygen.jpg"
+        },
+        {
+          "id": 8,
+          "title": "Easy On Me",
+          "category":"pop",
+          "singer": "Adele",
+          "duration": "03:44",
+          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+        },
+        {
+          "id": 9,
+          "title": "Easy On Me",
+          "category":"pop",
+          "singer": "Adele",
+          "duration": "03:44",
+          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+        }
+        ,   {
+          "id": 10,
+          "title": "Easy On Me",
+          "category":"pop",
+          "singer": "Adele",
+          "duration": "03:44",
+          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+        }
+        ,   {
+          "id": 11,
+          "title": "Easy On Me",
+          "category":"pop",
+          "singer": "Adele",
+          "duration": "03:44",
+          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+        }
+        ,   {
+          "id": 12,
+          "title": "Easy On Me",
+          "category":"pop",
+          "singer": "Adele",
+          "duration": "03:44",
+          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+        }
+      ]
+  }

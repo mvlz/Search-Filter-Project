@@ -15,12 +15,12 @@
 <body class="flex flex-col p-4 gap-y-3">
     <header class="header flex justify-between items-center gap-x-8">
         <div class="right-header w-1/4">
-            <button class="notification fad fa-bell fa-2x w-10 h-10 "></button>
+            <button class="notification fad fa-bell fa-lg w-10 h-10 "></button>
         </div>
         <div class="left-header w-1/4 flex gap-x-10 justify-between">
-            <div class="searchbox w-4/6 h-10 bg-white rounded-lg">
+            <div class="searchbox w-4/6 h-10 rounded-lg">
                 <label for="search-input" class="fal fa-search w-full flex items-center gap-x-3 px-4">
-                    <input type="text" id="search-input" class="h-full py-2 px-0 flex-grow bg-transparent ring-0 border-none
+                    <input type="text" id="search-input" class="search-input py-2 px-0 flex-grow bg-transparent ring-0 border-none
                     focus:outline-none focus:ring-0" placeholder="Search musics">
                 </label>
             </div>
@@ -34,27 +34,30 @@
             <div class="tab-bar w-1/6 h-full">
                 <ul class="music-style-list flex flex-col justify-evenly h-full">
                     <li class="style-item">
-                        <button class="btn w-full p-3 pl-4 text-left active">Pop</button>
+                        <button class="btn w-full p-3 pl-4 text-left" data-filter="">All</button>
                     </li>
                     <li class="style-item">
-                        <button class="btn w-full p-3 pl-4 text-left">Rap</button>
+                        <button class="btn w-full p-3 pl-4 text-left" data-filter="Pop">Pop</button>
                     </li>
                     <li class="style-item">
-                        <button class="btn w-full p-3 pl-4 text-left">R&B</button>
+                        <button class="btn w-full p-3 pl-4 text-left" data-filter="Rap">Rap</button>
                     </li>
                     <li class="style-item">
-                        <button class="btn w-full p-3 pl-4 text-left">Classical</button>
+                        <button class="btn w-full p-3 pl-4 text-left" data-filter="R&B">R&B</button>
                     </li>
                     <li class="style-item">
-                        <button class="btn w-full p-3 pl-4 text-left">Electronic</button>
+                        <button class="btn w-full p-3 pl-4 text-left" data-filter="Classical">Classical</button>
                     </li>
                     <li class="style-item">
-                        <button class="btn w-full p-3 pl-4 text-left">Hip hop</button>
+                        <button class="btn w-full p-3 pl-4 text-left" data-filter="Electronic">Electronic</button>
+                    </li>
+                    <li class="style-item">
+                        <button class="btn w-full p-3 pl-4 text-left" data-filter="Hiphop">Hip hop</button>
                     </li>
                 </ul>
             </div>
             <div class="musics-content w-5/6 h-full rounded-3xl p-6 flex flex-wrap gap-3 content-start">
-                <div class="music-item w-1/6 h-1/3 rounded-xl relative">
+                <!-- <div class="music-item w-1/6 h-1/3 rounded-xl relative">
                     <div class="music-img w-full h-2/3 overflow-hidden rounded-xl">
                         <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg" alt="" class="w-full">
                     </div>
@@ -121,7 +124,7 @@
                         <p class="music-timeline text-right">02:53</p>
                     </div>
                     <button class="play-btn w-10 h-10 rounded-full bg-purple-800 fas fa-play fa-lg absolute bottom-1/4 right-4"></button>
-                </div>
+                </div> -->
             </div>
         </section>
         <aside class="right-sidebar w-1/4 flex flex-col gap-y-3">
@@ -144,6 +147,7 @@
             <div class="music-player w-full h-3/5 rounded-3xl"></div>
         </aside>
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
