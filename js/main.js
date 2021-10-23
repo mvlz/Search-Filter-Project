@@ -36,7 +36,7 @@ function renderMusics(musics, filters) {
                 <p class="music-timeline text-right text-gray-500 pr-2">${item.duration}</p>
             </div>
         </div>
-        <button class="play-btn w-10 h-10 rounded-full bg-purple-800 fas fa-play fa-lg absolute bottom-7 right-3"></button>
+        <button class="play-btn w-10 h-10 rounded-full  fas fa-play fa-lg absolute bottom-7 right-3"></button>
         `;
         musicContainer.appendChild(musicDiv);
     });

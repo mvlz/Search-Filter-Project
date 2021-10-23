@@ -10,7 +10,7 @@ body {
     font-size: 62.5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
-    background-image: url('https://www.pngfind.com/pngs/b/6-68803_soundwave-transparent-png-soundwave-png-png-download.png');
+    /* background-image: url('https://www.pngfind.com/pngs/b/6-68803_soundwave-transparent-png-soundwave-png-png-download.png'); */
     background-color: #222222;
     background-size: contain;
     background-repeat: no-repeat;
@@ -33,17 +33,17 @@ body::before {
     width: 4px;
     height: 4px;
     border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #161616;
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
     border-radius: 10px;
-  }
+}
 
 .header {
     height: 4rem;
@@ -54,20 +54,6 @@ body::before {
     height: calc(100% - 4rem);
 }
 
-.musics-content,
-.music-style-list {
-    background-image: linear-gradient(30deg, rgb(44 44 44 / 30%), rgb(44 44 44 / 60%));
-    /* background-image: linear-gradient(
-        27deg, #a7a20c, #ff000066); */
-    backdrop-filter: blur(8px);
-    border: 2px solid #404040;
-
-    background-image: linear-gradient(225deg, rgb(255 255 255 / 5%), rgb(255 255 255 / 15%));
-    /* background-image: linear-gradient( 
-        27deg, #a7a20c, #ff000066); */
-    backdrop-filter: blur(8px);
-    border: 2px solid #ffffff29;
-}
 
 .music-style-list {
     width: 7rem;
@@ -75,23 +61,46 @@ body::before {
 
 
 .play-list {
-    background-color: #000000b2;
+    background-color: #eba5ca4d;
+    background-image: linear-gradient(212deg, rgba(235 165 202 / 0.2), #222222b3);
     backdrop-filter: blur(5px);
     color: white;
     overflow-x: hidden;
+    border: 1px solid #5c4c54;
+    background-color: #272626;
+    box-shadow: 0px 0px 40px -2px #121212;
+    background-image: linear-gradient(212deg, #323232, #222222b3);
+    border: 1px solid #363636;
 }
-.list-container{
+
+.list-container {
     max-width: 100%;
     overflow-x: auto;
+    overflow-y: hidden;
 }
-.play-list-item{
+
+.play-list-item {
     min-width: 4rem;
 }
-.top-music {
-    background-color: #000000b2;
-    backdrop-filter: blur(5px);
+.play-list,.top-music, .searchbox,
+.music-style-list,.musics-content{
+    background-image: linear-gradient(212deg, #323232, #222222b3);
+    border: 1px solid #363636;
     color: white;
 }
+.top-music {
+    background-color: #2745744d;
+    background-image: linear-gradient(212deg, rgba(78, 133, 222, 0.2), #222222b3);
+    backdrop-filter: blur(5px);
+    color: white;
+    overflow-x: hidden;
+    border: 1px solid #384456;
+    background-color: #272626;
+    box-shadow: 0px 0px 40px -2px #121212;
+    background-image: linear-gradient(212deg, #323232, #222222b3);
+    border: 1px solid #363636;
+}
+
 
 .music-player {
     background-color: #000000b2;
@@ -109,10 +118,6 @@ body::before {
 
 .btn.active,
 .btn:focus {
-    /* background-image: linear-gradient(90deg, #303030, #282828); */
-    /* border-image-source: linear-gradient(0deg, #5b21b6, #7621b6); */
-    /* border-image-slice: 1;
-    border-left: 5px solid; */
     color: white;
     position: relative;
     display: flex;
@@ -120,22 +125,18 @@ body::before {
     transition: all ease 0.2s;
 }
 
-.btn.active::before, .btn:focus::before {
+.btn.active::before,
+.btn:focus::before {
     content: '';
     position: absolute;
-    left: -0.25rem;
+    left: -0.17rem;
     height: 2.75rem;
-    width: 0.25rem;
+    width: 0.2rem;
     background-color: #5b21b6;
     border-radius: 50px;
-    box-shadow: 0px 0px 18px 2px #5b21b6;
+    box-shadow: 0px 0px 28px 2px #5b21b6;
 }
 
-/* 
-.style-item {
-    border-radius: 5px 0px 0px 5px;
-    overflow: hidden;
-} */
 
 .music-item {
     color: whitesmoke;
@@ -144,17 +145,70 @@ body::before {
     height: 12rem;
 }
 
+.music-item:nth-of-type(10n-1) .play-btn{
+    box-shadow: 0px 0px 60px 8px #ff5200;
+    color: #ff5200;
+}
+
+.music-item:nth-of-type(10n-2) .play-btn{
+    box-shadow: 0px 0px 60px 8px #ff0000;
+    color: #ff0000;
+}
+
+.music-item:nth-of-type(10n-3) .play-btn{
+    box-shadow: 0px 0px 60px 8px #ff0076;
+    color: #ff0076;
+}
+
+.music-item:nth-of-type(10n-4) .play-btn{
+    box-shadow: 0px 0px 60px 8px #b400ff;
+    color: #b400ff;
+}
+
+.music-item:nth-of-type(10n-5) .play-btn{
+    box-shadow: 0px 0px 60px 8px #7aff00;
+    color: #7aff00;
+}
+
+.music-item:nth-of-type(10n-6) .play-btn{
+    box-shadow: 0px 0px 60px 8px #00ff4e;
+    color: #00ff4e;
+}
+
+.music-item:nth-of-type(10n-7) .play-btn{
+    box-shadow: 0px 0px 60px 8px #00ffad;
+    color: #00ffad;
+}
+
+.music-item:nth-of-type(10n-8) .play-btn{
+    box-shadow: 0px 0px 60px 8px #00f3ff;
+    color: #00f3ff;
+}
+
+.music-item:nth-of-type(10n-9) .play-btn{
+    box-shadow: 0px 0px 60px 8px #005aff;
+    color: #005aff;
+}
+
+.music-item:nth-of-type(10n) .play-btn{
+    color: #ffeb00;
+    box-shadow: 0px 0px 60px 8px #ffeb00;
+}
+
 .music-img {
     box-shadow: 0px 16px 30px -5px #000;
+    filter: saturate(0.6);
 }
 
 .play-btn {
-    box-shadow: 0px 0px 35px 4px #5a21b6;
+    /* box-shadow: 0px 0px 35px 4px #5a21b6; */
     transition: all ease 0.1s;
+    backdrop-filter: blur(2px);
 }
 
 .play-btn:hover {
     transform: scale(1.15);
+    box-shadow: 0px 0px 12px 1px !important;
 }
 
 .notification {
@@ -175,16 +229,51 @@ body::before {
     border-radius: 20px;
     background-color: blueviolet;
 }
-.notification path{
+
+.notification path {
     fill: #838383;
 }
 
-.searchbox {
+/* .searchbox {
     background-color: #303030;
     color: white;
-}
+} */
 
 .search-input {
     font-family: segoe ui;
     font-size: 0.75rem !important;
+}
+
+.music-player {
+    background-image: url('https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.music-player::before {
+    content: '';
+    position: absolute;
+    background-image: linear-gradient(0deg, black, transparent);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.line {
+    width: 100%;
+    border-radius: 50px;
+    margin: 0.5rem auto;
+    height: 0.3rem;
+    border: 1px solid #2c2c2c;
+    position: relative;
+}
+
+.line-progress {
+    width: 30%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #5b21b6;
+    position: absolute;
+    left: 0;
 }
