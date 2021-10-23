@@ -42,11 +42,11 @@
         },
         {
           "id": 6,
-          "title": "Easy On Me",
-          "category":"pop",
-          "singer": "Adele",
-          "duration": "03:44",
-          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+          "title": "Believer",
+          "category":"Electronic",
+          "singer": "Imagine Dragons",
+          "duration": "03:24",
+          "image": "https://i.scdn.co/image/ab67616d0000b2735675e83f707f1d7271e5cf8a"
         },
         {
           "id": 7,
@@ -58,43 +58,35 @@
         },
         {
           "id": 8,
-          "title": "Easy On Me",
+          "title": "Astronaut In The Ocean",
           "category":"pop",
-          "singer": "Adele",
-          "duration": "03:44",
-          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+          "singer": "Masked Wolf",
+          "duration": "02:12",
+          "image": "https://m.media-amazon.com/images/I/81pFOvWtu6L._SS500_.jpg"
         },
         {
           "id": 9,
-          "title": "Easy On Me",
-          "category":"pop",
-          "singer": "Adele",
-          "duration": "03:44",
-          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+          "title": "Neghab",
+          "category":"rap",
+          "singer": "Majhool",
+          "duration": "03:02",
+          "image": "https://dbrm.brtm.ir/dl/images/Majhool-Neghaab.jpg"
         }
         ,   {
           "id": 10,
-          "title": "Easy On Me",
+          "title": "It don't matter",
           "category":"pop",
-          "singer": "Adele",
+          "singer": "inna ft. Alok",
           "duration": "03:44",
-          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+          "image": "http://fox-lyrics.ir/wp-content/uploads/2021/07/It-Dont-Matter-Sofi-Tukker-INNA.jpg"
         }
         ,   {
           "id": 11,
-          "title": "Easy On Me",
-          "category":"pop",
-          "singer": "Adele",
-          "duration": "03:44",
-          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
-        }
-        ,   {
-          "id": 12,
-          "title": "Easy On Me",
-          "category":"pop",
-          "singer": "Adele",
-          "duration": "03:44",
-          "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
+          "title": "Bande Naf Ta Khat Saf",
+          "category":"rap",
+          "singer": "Yas ft. Moer",
+          "duration": "05:21",
+          "image": "https://www.topseda.ir/wp-content/uploads/2018/03/photo_2018-03-17_21-03-50-400x400.jpg"
         }
       ]
   }
