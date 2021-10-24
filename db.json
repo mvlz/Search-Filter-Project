@@ -6,6 +6,7 @@
           "category":"pop",
           "singer": "Adele",
           "duration": "03:44",
+          "URL":"https://cdn.avaa.cloud/files/musics/00/07/27/Adele-Easy-On-Me.mp3",
           "image": "https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg"
         },
         {
@@ -23,6 +24,7 @@
           "category":"pop",
           "singer": "Taylor Swift",
           "duration": "03:24",
+          "URL":"https://ts5.tarafdari.com/contents/user678699/content-sound/wildest_dreams_-_taylor_swift.mp3",
           "image": "https://linkstorage.linkfire.com/medialinks/images/61cb85f9-f65d-4dca-95e2-5cccd43b846b/artwork-440x440.jpg"
         },
         {
@@ -31,6 +33,7 @@
           "category":"pop",
           "singer": "Little Mix",
           "duration": "03:41",
+          "URL":"https://musicfeed.ir/files/dir/2021/9/Little%20Mix%20-%20Love%20(Sweet%20Love)-128.mp3",
           "image": "https://images.genius.com/8dfa2d7d541a4281fc5087b359861895.1000x1000x1.jpg"
         },
         {
@@ -38,7 +41,8 @@
           "title": "Koja Boodi",
           "category":"classical",
           "singer": "Mohsen Chavoshi",
-          "duration": "03:44",
+          "duration": "03:33",
+          "URL":"https://dls.music-fa.com/tagdl/ati/Mohsen%20Chavoshi%20-%20Koja%20Boodi%20(320).mp3",
           "image": "https://sakhamusic.ir/wp-content/uploads/2021/10/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF-%D8%A2%D9%87%D9%86%DA%AF-%D9%85%D8%AD%D8%B3%D9%86-%DA%86%D8%A7%D9%88%D8%B4%DB%8C-%DA%A9%D8%AC%D8%A7-%D8%A8%D9%88%D8%AF%DB%8C.jpg"
         },
         {
@@ -47,6 +51,7 @@
           "category":"Electronic",
           "singer": "Imagine Dragons",
           "duration": "03:24",
+          "URL": "https://dl.baarzesh.net/music/2020/3/Imagine_Dragons_Believer_128.mp3",
           "image": "https://i.scdn.co/image/ab67616d0000b2735675e83f707f1d7271e5cf8a"
         },
         {
@@ -55,6 +60,7 @@
           "category":"hiphop",
           "singer": "TM Bax",
           "duration": "02:53",
+          "URL":"http://s4.topseda.ir/nevisande/neda//99/11/12/ TM Bax/ TM Bax - Oxygen 128.mp3",
           "image": "https://www.topseda.ir/wp-content/uploads/2021/01/%20TM%20Bax%20-%20Oxygen.jpg"
         },
         {
@@ -63,6 +69,7 @@
           "category":"pop",
           "singer": "Masked Wolf",
           "duration": "02:12",
+          "URL":"https://dl.cactusmusic.ir/2021/06/AstronautInTheOcean.mp3",
           "image": "https://m.media-amazon.com/images/I/81pFOvWtu6L._SS500_.jpg"
         },
         {
@@ -71,6 +78,7 @@
           "category":"rap",
           "singer": "Majhool",
           "duration": "03:02",
+          "URL":"https://dbrm.brtm.ir/dl/mp3s/Majhool-Neghaab-128.mp3",
           "image": "https://dbrm.brtm.ir/dl/images/Majhool-Neghaab.jpg"
         }
         ,   {
@@ -78,7 +86,8 @@
           "title": "It don't matter",
           "category":"pop",
           "singer": "inna ft. Alok",
-          "duration": "03:44",
+          "duration": "02:53",
+          "URL":"https://dlmain.gandommusic.ir/mp3/1/Alok%2C%20Sofi%20Tukker%20%26%20INNA%20-%20It%20Don%27t%20Matter%20%28%20GandomMusic.ir%20%29.mp3",
           "image": "http://fox-lyrics.ir/wp-content/uploads/2021/07/It-Dont-Matter-Sofi-Tukker-INNA.jpg"
         }
         ,   {
@@ -87,6 +96,7 @@
           "category":"rap",
           "singer": "Yas ft. Moer",
           "duration": "05:21",
+          "URL":"http://www.s4.topseda.ir/nevisande/ali/music/96/12/27/Yas%20-%20Bande%20Naaf%20Ta%20Khatte%20Saaf%20%28Ft%20Moer%29%5b128%5d.mp3",
           "image": "https://www.topseda.ir/wp-content/uploads/2018/03/photo_2018-03-17_21-03-50-400x400.jpg"
         }
       ]
