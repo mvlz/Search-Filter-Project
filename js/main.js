@@ -72,59 +72,74 @@ function playMusic(musics) {
         playBtns.forEach(btn => {
             // console.log(btn.dataset.id);
             btn.addEventListener("click", (e) => {
-                const musicPlayer = document.querySelector(".music-player");
+                const musicPlayerDiv = document.querySelector(".music-player");
                 const musicTotalTime = document.querySelector(".music-Time");
                 const musicPassedTime = document.querySelector(".music-passed-time");
                 const songName = document.querySelector(".song-name");
                 const songSinger = document.querySelector(".song-singer");
+                const musicPlayerTag = document.querySelector(".player");
                 // console.log(musicTotalTime.innerText)
                 if (parseInt(e.target.dataset.id) === parseInt(music.id)) {
-                    musicPlayer.style.backgroundImage = `URL(${music.image})`;
+                    musicPlayerDiv.style.backgroundImage = `URL(${music.image})`;
                     musicTotalTime.innerText = music.duration;
                     songName.innerText = music.title;
                     songSinger.innerText = music.singer;
+                    musicPlayerTag.src = music.URL;
                     // lineProgress.style.width = passedTime;
 
                     const playPauseBtn = document.querySelector(".play-stop");
-                    let audio = new Audio(music.URL);
-                    audio.play();
-                    playPauseBtn.classList.remove("fa-play");
-                    playPauseBtn.classList.add("fa-pause");
+                    // let audio = new Audio(music.URL);
+                    musicPlayerTag.play();
+                    e.target.classList.remove("fa-play");
+                    e.target.classList.add("fa-pause");
 
-                    playPauseBtn.addEventListener("click", () => {
-                        if (playPauseBtn.classList.contains("fa-play")) {
-                            audio.play();
-                            playPauseBtn.classList.remove("fa-play");
-                            playPauseBtn.classList.add("fa-pause");
-                        } else if (playPauseBtn.classList.contains("fa-pause")) {
-                            audio.pause();
-                            playPauseBtn.classList.remove("fa-pause");
-                            playPauseBtn.classList.add("fa-play");
+                    playPauseBtn.addEventListener("click", (e) => {
+                        if (e.target.classList.contains("fa-play")) {
+                            musicPlayerTag.play();
+                            e.target.classList.remove("fa-play");
+                            e.target.classList.add("fa-pause");
+                            btn.classList.remove("fa-play");
+                            btn.classList.add("fa-pause");
+                        } else if (e.target.classList.contains("fa-pause")) {
+                            musicPlayerTag.pause();
+                            e.target.classList.remove("fa-pause");
+                            e.target.classList.add("fa-play");
+                            btn.classList.remove("fa-pause");
+                            btn.classList.add("fa-play");
                         }
                     })
-
-                    // let number = "04:50"
-                    // let minToSec = parseInt(music.duration.split(":")[0] * 60);
-                    // let sec = parseInt(music.duration.split(":")[1]);
-                    // const totalSec = sec + minToSec;
-                    // console.log(totalSec);
-                    
                     const lineProgress = document.querySelector(".line-progress");
-                    setInterval(() => {
-                        const duration = timeToNumber (music.duration)
-                        const playPercent = (audio.currentTime / duration) * 100;
-                        // console.log(parseInt(music.duration))
+
+                    musicPlayerTag.addEventListener('timeupdate',()=>{
+                        const duration = (timeToNumber (music.duration)).toFixed(2);
+                        let currentTimeNum =(musicPlayerTag.currentTime).toFixed(2);
+                        const playPercent = (( currentTimeNum / duration) * 100).toFixed(2);
                         lineProgress.style.width = `${playPercent}%`;
-                        const currentTime = msConversion(audio.currentTime * 1000)
-                        musicPassedTime.innerText = currentTime;
-                    }, 1000);
+                        const currentTimeMin = msConversion(musicPlayerTag.currentTime * 1000)
+                        musicPassedTime.innerText = currentTimeMin;
+                    });
+                    // const lineProgress = document.querySelector(".line-progress");
+                    // setInterval(() => {
+                    //     let currentTimeNum = 0;
+
+                    //     const duration = (timeToNumber (music.duration)).toFixed(2);
+                    //     currentTimeNum =(musicPlayerTag.currentTime).toFixed(2);
+                    //     const playPercent = (( currentTimeNum / duration) * 100).toFixed(2);
+                    //     lineProgress.style.width = `${playPercent}%`;
+                    //     const currentTimeMin = msConversion(musicPlayerTag.currentTime * 1000)
+                    //     musicPassedTime.innerText = currentTimeMin;
+                    // }, 500);
+
+                    // clearInterval(intervalID)
 
                 }
+
             });
         });
     });
 
 }
+
 
 // function millisToMinutesAndSeconds(millis) {
 //     let minutes = Math.floor(millis / 60);
@@ -159,4 +174,13 @@ function msConversion(millis) {
     else {
       return min + ":" + sec;
     }
+  }
+
+
+  function updateProgress() {
+    var current = player.currentTime;
+    var percent = (current / player.duration) * 100;
+    progress.style.width = percent + '%';
+    
+    currentTime.textContent = formatTime(current);
   }
