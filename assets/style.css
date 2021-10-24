@@ -271,10 +271,13 @@ body::before {
 }
 
 .line-progress {
-    width: 30%;
+    width: unset;
     height: 100%;
     border-radius: 50px;
     background-color: #5b21b6;
     position: absolute;
     left: 0;
+}
+.player{
+    visibility: hidden;
 }

@@ -74,6 +74,7 @@ function playMusic(musics) {
             btn.addEventListener("click", (e) => {
                 const musicPlayer = document.querySelector(".music-player");
                 const musicTotalTime = document.querySelector(".music-Time");
+                const musicPassedTime = document.querySelector(".music-passed-time");
                 const songName = document.querySelector(".song-name");
                 const songSinger = document.querySelector(".song-singer");
                 // console.log(musicTotalTime.innerText)
@@ -82,9 +83,80 @@ function playMusic(musics) {
                     musicTotalTime.innerText = music.duration;
                     songName.innerText = music.title;
                     songSinger.innerText = music.singer;
+                    // lineProgress.style.width = passedTime;
+
+                    const playPauseBtn = document.querySelector(".play-stop");
+                    let audio = new Audio(music.URL);
+                    audio.play();
+                    playPauseBtn.classList.remove("fa-play");
+                    playPauseBtn.classList.add("fa-pause");
+
+                    playPauseBtn.addEventListener("click", () => {
+                        if (playPauseBtn.classList.contains("fa-play")) {
+                            audio.play();
+                            playPauseBtn.classList.remove("fa-play");
+                            playPauseBtn.classList.add("fa-pause");
+                        } else if (playPauseBtn.classList.contains("fa-pause")) {
+                            audio.pause();
+                            playPauseBtn.classList.remove("fa-pause");
+                            playPauseBtn.classList.add("fa-play");
+                        }
+                    })
+
+                    // let number = "04:50"
+                    // let minToSec = parseInt(music.duration.split(":")[0] * 60);
+                    // let sec = parseInt(music.duration.split(":")[1]);
+                    // const totalSec = sec + minToSec;
+                    // console.log(totalSec);
+                    
+                    const lineProgress = document.querySelector(".line-progress");
+                    setInterval(() => {
+                        const duration = timeToNumber (music.duration)
+                        const playPercent = (audio.currentTime / duration) * 100;
+                        // console.log(parseInt(music.duration))
+                        lineProgress.style.width = `${playPercent}%`;
+                        const currentTime = msConversion(audio.currentTime * 1000)
+                        musicPassedTime.innerText = currentTime;
+                    }, 1000);
+
                 }
             });
         });
     });
 
 }
+
+// function millisToMinutesAndSeconds(millis) {
+//     let minutes = Math.floor(millis / 60);
+//     let seconds = ((millis % 60) / 1).toFixed(0);
+//     return minutes + ":" + (seconds < 1 ? '00' : '') + seconds;
+//   }
+
+
+
+function timeToNumber (number){
+//   let number = "03:33";
+  let minToSec = parseInt(number.split(":")[0] * 60);
+  let sec = parseInt(number.split(":")[1]);
+  return totalSec = sec + minToSec;
+}
+
+function msConversion(millis) {
+    let sec = Math.floor(millis / 1000);
+    let hrs = Math.floor(sec / 3600);
+    sec -= hrs * 3600;
+    let min = Math.floor(sec / 60);
+    sec -= min * 60;
+  
+    sec = '' + sec;
+    sec = ('00' + sec).substring(sec.length);
+  
+    min = '' + min;
+    min = ('00' + min).substring(min.length);
+    if (hrs > 0) {
+      return hrs + ":" + min + ":" + sec;
+    }
+    else {
+      return min + ":" + sec;
+    }
+  }
