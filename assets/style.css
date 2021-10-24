@@ -222,12 +222,13 @@ body::before {
 .notification::before {
     content: '';
     position: absolute;
-    right: -0.25rem;
+    right: -0.22rem;
     top: -0.15rem;
-    width: 0.65rem;
-    height: 0.65rem;
+    width: 0.6rem;
+    height: 0.6rem;
     border-radius: 20px;
     background-color: blueviolet;
+    box-shadow: rgb(91 33 182) 0px 0px 14px 2px;
 }
 
 .notification path {

@@ -21,11 +21,11 @@
                 </svg>                    
             </button>
         </div>
-        <div class="left-header w-1/4 flex gap-x-10 justify-between pl-2">
+        <div class="left-header w-1/4 flex gap-x-8 justify-between pl-2">
             <div class="searchbox w-5/6 h-10 rounded-lg">
-                <label for="search-input" class="fal fa-search w-full flex items-center gap-x-3 px-4">
+                <label for="search-input" class="fal fa-search fa-lg  text-gray-500 w-full flex items-center gap-x-3 px-4">
                     <input type="text" id="search-input" class="search-input py-2 px-0 flex-grow bg-transparent ring-0 border-none
-                    focus:outline-none focus:ring-0" placeholder="Search music, singer, music genre ...">
+                    focus:outline-none focus:ring-0" placeholder="Search music, singer or music genre ...">
                 </label>
             </div>
             <a class="account-img w-10 h-10 block overflow-hidden rounded-full" href="#">
@@ -36,7 +36,7 @@
     <section class="container flex gap-x-8">
         <section class="main-content w-3/4 flex gap-x-8">
             <div class="tab-bar h-full">
-                <ul class="music-style-list flex flex-col rounded-3xl justify-evenly h-full ">
+                <ul class="music-style-list flex flex-col rounded-2xl justify-evenly h-full ">
                     <li class="style-item">
                         <button class="btn w-full p-3 pl-6 text-left active" data-filter="">All</button>
                     </li>
@@ -63,8 +63,8 @@
             <div class="musics-content flex-grow h-full rounded-3xl p-6 flex flex-wrap gap-x-8 gap-y-10 content-start overflow-auto"></div>
         </section>
         <aside class="right-sidebar w-1/4 flex flex-col gap-y-3">
-            <div class="play-list w-full h-1/5 rounded-xl p-3">
-                <h2 class="list-title h-1/4">Your play list</h2>
+            <div class="play-list w-full h-1/5 rounded-xl py-2 px-3">
+                <h2 class="list-title h-1/4 text-sm text-gray-300">Your play list</h2>
                 <div class="list-container h-3/4 w-full flex gap-x-3 items-center">
                     <div class="play-list-item w-16 h-16 bg-gray-500 rounded-lg overflow-hidden">
                         <img src="https://i.scdn.co/image/ab67616d0000b2735675e83f707f1d7271e5cf8a" alt="" class="w-full">
@@ -77,8 +77,8 @@
                     </div>
                 </div>
             </div>
-            <div class="top-music w-full h-1/5 rounded-xl p-3">
-                <h2 class="list-title h-1/4">Your top musics</h2>
+            <div class="top-music w-full h-1/5 rounded-xl py-2 px-3">
+                <h2 class="list-title h-1/4 text-sm text-gray-300">Your top musics</h2>
                 <div class="list-container h-3/4 w-full flex gap-x-3 items-center">
                     <div class="play-list-item w-16 h-16 bg-gray-500 rounded-lg overflow-hidden">
                         <img src="http://fox-lyrics.ir/wp-content/uploads/2021/07/It-Dont-Matter-Sofi-Tukker-INNA.jpg" alt="" class="w-full">
@@ -104,8 +104,8 @@
                         <span class="line-progress"></span>
                     </div>
                     <div class="flex justify-between">
-                        <p class="music-time">00:57</p>
-                        <p class="music-passed-Time">03:23</p>
+                        <p class="music-passed-time">00:57</p>
+                        <p class="music-Time">03:23</p>
                     </div>
                 </div>
                 <div class="music-manage flex justify-between mx-16 h-8 items-start mb-3">
