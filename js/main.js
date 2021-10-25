@@ -71,13 +71,15 @@ function playMusic(musics) {
 
         playBtns.forEach(btn => {
             // console.log(btn.dataset.id);
+            const playPauseBtn = document.querySelector(".play-stop");
+            const musicPlayerTag = document.querySelector(".player");
+
             btn.addEventListener("click", (e) => {
                 const musicPlayerDiv = document.querySelector(".music-player");
                 const musicTotalTime = document.querySelector(".music-Time");
                 const musicPassedTime = document.querySelector(".music-passed-time");
                 const songName = document.querySelector(".song-name");
                 const songSinger = document.querySelector(".song-singer");
-                const musicPlayerTag = document.querySelector(".player");
                 // console.log(musicTotalTime.innerText)
                 if (parseInt(e.target.dataset.id) === parseInt(music.id)) {
                     musicPlayerDiv.style.backgroundImage = `URL(${music.image})`;
@@ -87,35 +89,34 @@ function playMusic(musics) {
                     musicPlayerTag.src = music.URL;
                     // lineProgress.style.width = passedTime;
 
-                    const playPauseBtn = document.querySelector(".play-stop");
                     // let audio = new Audio(music.URL);
                     musicPlayerTag.play();
-                    e.target.classList.remove("fa-play");
-                    e.target.classList.add("fa-pause");
+                    playPauseBtn.classList.remove("fa-play");
+                    playPauseBtn.classList.add("fa-pause");
 
                     playPauseBtn.addEventListener("click", (e) => {
-                        if (e.target.classList.contains("fa-play")) {
-                            musicPlayerTag.play();
-                            e.target.classList.remove("fa-play");
-                            e.target.classList.add("fa-pause");
-                            btn.classList.remove("fa-play");
-                            btn.classList.add("fa-pause");
-                        } else if (e.target.classList.contains("fa-pause")) {
-                            musicPlayerTag.pause();
-                            e.target.classList.remove("fa-pause");
-                            e.target.classList.add("fa-play");
-                            btn.classList.remove("fa-pause");
-                            btn.classList.add("fa-play");
+                        switch (playPauseBtn.classList.contains("fa-play")) {
+                            case true:
+                                musicPlayerTag.play();
+                                playPauseBtn.classList.remove("fa-play");
+                                playPauseBtn.classList.add("fa-pause");
+                                break;
+                            case false:
+                                musicPlayerTag.pause();
+                                playPauseBtn.classList.remove("fa-pause");
+                                playPauseBtn.classList.add("fa-play");
+                                break;
                         }
-                    })
+                    });
+
                     const lineProgress = document.querySelector(".line-progress");
 
-                    musicPlayerTag.addEventListener('timeupdate',()=>{
-                        const duration = (timeToNumber (music.duration)).toFixed(2);
-                        let currentTimeNum =(musicPlayerTag.currentTime).toFixed(2);
-                        const playPercent = (( currentTimeNum / duration) * 100).toFixed(2);
+                    musicPlayerTag.addEventListener('timeupdate', () => {
+                        const duration = (timeToNumber(music.duration)).toFixed(2);
+                        let currentTimeNum = (musicPlayerTag.currentTime).toFixed(0);
+                        const playPercent = ((currentTimeNum / duration) * 100).toFixed(2);
                         lineProgress.style.width = `${playPercent}%`;
-                        const currentTimeMin = msConversion(musicPlayerTag.currentTime * 1000)
+                        const currentTimeMin = msConversion(currentTimeNum * 1000)
                         musicPassedTime.innerText = currentTimeMin;
                     });
                     // const lineProgress = document.querySelector(".line-progress");
@@ -135,25 +136,30 @@ function playMusic(musics) {
                 }
 
             });
+            musicPlayerTag.addEventListener("ended", () => {
+                playPauseBtn.classList.remove("fa-pause");
+                playPauseBtn.classList.add("fa-play");
+            })
+            document.querySelector(".line").addEventListener('click', function (event) {
+                let coordStart = this.getBoundingClientRect().left
+                let coordEnd = event.pageX;
+                let p = (coordEnd - coordStart) / this.offsetWidth
+                // now.style.width = p.toFixed(3) * 100 + '%'
+
+                musicPlayerTag.currentTime = p * musicPlayerTag.duration;
+                musicPlayerTag.play();
+            })
+
         });
     });
 
 }
 
-
-// function millisToMinutesAndSeconds(millis) {
-//     let minutes = Math.floor(millis / 60);
-//     let seconds = ((millis % 60) / 1).toFixed(0);
-//     return minutes + ":" + (seconds < 1 ? '00' : '') + seconds;
-//   }
-
-
-
-function timeToNumber (number){
-//   let number = "03:33";
-  let minToSec = parseInt(number.split(":")[0] * 60);
-  let sec = parseInt(number.split(":")[1]);
-  return totalSec = sec + minToSec;
+function timeToNumber(number) {
+    //   let number = "03:33";
+    let minToSec = parseInt(number.split(":")[0] * 60);
+    let sec = parseInt(number.split(":")[1]);
+    return totalSec = sec + minToSec;
 }
 
 function msConversion(millis) {
@@ -162,25 +168,24 @@ function msConversion(millis) {
     sec -= hrs * 3600;
     let min = Math.floor(sec / 60);
     sec -= min * 60;
-  
+
     sec = '' + sec;
     sec = ('00' + sec).substring(sec.length);
-  
+
     min = '' + min;
     min = ('00' + min).substring(min.length);
     if (hrs > 0) {
-      return hrs + ":" + min + ":" + sec;
+        return hrs + ":" + min + ":" + sec;
+    } else {
+        return min + ":" + sec;
     }
-    else {
-      return min + ":" + sec;
-    }
-  }
+}
 
 
-  function updateProgress() {
+function updateProgress() {
     var current = player.currentTime;
     var percent = (current / player.duration) * 100;
     progress.style.width = percent + '%';
-    
+
     currentTime.textContent = formatTime(current);
-  }
+}
