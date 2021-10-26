@@ -1,6 +1,14 @@
 const searchInput = document.querySelector(".search-input");
 const musicContainer = document.querySelector(".musics-content");
 const categoriesBtns = document.querySelectorAll(".btn");
+const playPauseBtn = document.querySelector(".play-stop");
+const musicPlayerTag = document.querySelector(".player");
+const musicPlayerDiv = document.querySelector(".music-player");
+const musicTotalTime = document.querySelector(".music-Time");
+const musicPassedTime = document.querySelector(".music-passed-time");
+const songName = document.querySelector(".song-name");
+const songSinger = document.querySelector(".song-singer");
+
 let allMusicsData = [];
 const filters = {
     searchItems: "",
@@ -43,7 +51,6 @@ function renderMusics(musics, filters) {
     });
 }
 searchInput.addEventListener("input", (e) => {
-    // console.log(e.target.value)
     filters.searchItems = e.target.value;
     renderMusics(allMusicsData, filters);
 });
@@ -64,53 +71,22 @@ categoriesBtns.forEach((btn) => {
 })
 
 
+
 function playMusic(musics) {
     musics.forEach(music => {
-        // console.log(music)
         const playBtns = document.querySelectorAll(".play-btn");
-
         playBtns.forEach(btn => {
-            // console.log(btn.dataset.id);
-            const playPauseBtn = document.querySelector(".play-stop");
-            const musicPlayerTag = document.querySelector(".player");
-
             btn.addEventListener("click", (e) => {
-                const musicPlayerDiv = document.querySelector(".music-player");
-                const musicTotalTime = document.querySelector(".music-Time");
-                const musicPassedTime = document.querySelector(".music-passed-time");
-                const songName = document.querySelector(".song-name");
-                const songSinger = document.querySelector(".song-singer");
-                // console.log(musicTotalTime.innerText)
                 if (parseInt(e.target.dataset.id) === parseInt(music.id)) {
                     musicPlayerDiv.style.backgroundImage = `URL(${music.image})`;
                     musicTotalTime.innerText = music.duration;
                     songName.innerText = music.title;
                     songSinger.innerText = music.singer;
                     musicPlayerTag.src = music.URL;
-                    // lineProgress.style.width = passedTime;
-
-                    // let audio = new Audio(music.URL);
                     musicPlayerTag.play();
-                    playPauseBtn.classList.remove("fa-play");
-                    playPauseBtn.classList.add("fa-pause");
-
-                    playPauseBtn.addEventListener("click", (e) => {
-                        switch (playPauseBtn.classList.contains("fa-play")) {
-                            case true:
-                                musicPlayerTag.play();
-                                playPauseBtn.classList.remove("fa-play");
-                                playPauseBtn.classList.add("fa-pause");
-                                break;
-                            case false:
-                                musicPlayerTag.pause();
-                                playPauseBtn.classList.remove("fa-pause");
-                                playPauseBtn.classList.add("fa-play");
-                                break;
-                        }
-                    });
-
+                    addPauseStyle();
+                    playPauseBtn.addEventListener("click", togglePlay);
                     const lineProgress = document.querySelector(".line-progress");
-
                     musicPlayerTag.addEventListener('timeupdate', () => {
                         const duration = (timeToNumber(music.duration)).toFixed(2);
                         let currentTimeNum = (musicPlayerTag.currentTime).toFixed(0);
@@ -119,26 +95,11 @@ function playMusic(musics) {
                         const currentTimeMin = msConversion(currentTimeNum * 1000)
                         musicPassedTime.innerText = currentTimeMin;
                     });
-                    // const lineProgress = document.querySelector(".line-progress");
-                    // setInterval(() => {
-                    //     let currentTimeNum = 0;
-
-                    //     const duration = (timeToNumber (music.duration)).toFixed(2);
-                    //     currentTimeNum =(musicPlayerTag.currentTime).toFixed(2);
-                    //     const playPercent = (( currentTimeNum / duration) * 100).toFixed(2);
-                    //     lineProgress.style.width = `${playPercent}%`;
-                    //     const currentTimeMin = msConversion(musicPlayerTag.currentTime * 1000)
-                    //     musicPassedTime.innerText = currentTimeMin;
-                    // }, 500);
-
-                    // clearInterval(intervalID)
-
                 }
 
             });
             musicPlayerTag.addEventListener("ended", () => {
-                playPauseBtn.classList.remove("fa-pause");
-                playPauseBtn.classList.add("fa-play");
+                addPlayStyle();
             })
             document.querySelector(".line").addEventListener('click', function (event) {
                 let coordStart = this.getBoundingClientRect().left
@@ -148,6 +109,7 @@ function playMusic(musics) {
 
                 musicPlayerTag.currentTime = p * musicPlayerTag.duration;
                 musicPlayerTag.play();
+                addPauseStyle();
             })
 
         });
@@ -156,7 +118,6 @@ function playMusic(musics) {
 }
 
 function timeToNumber(number) {
-    //   let number = "03:33";
     let minToSec = parseInt(number.split(":")[0] * 60);
     let sec = parseInt(number.split(":")[1]);
     return totalSec = sec + minToSec;
@@ -188,4 +149,24 @@ function updateProgress() {
     progress.style.width = percent + '%';
 
     currentTime.textContent = formatTime(current);
+}
+function togglePlay() {
+    switch (playPauseBtn.classList.contains("fa-play")) {
+            case true:
+                musicPlayerTag.play();
+                addPauseStyle();
+                break;
+            case false:
+                musicPlayerTag.pause();
+                addPlayStyle();
+                break;
+        }
+  };
+  function addPlayStyle(){
+    playPauseBtn.classList.remove("fa-pause");
+    playPauseBtn.classList.add("fa-play");
+  }
+  function addPauseStyle(){
+    playPauseBtn.classList.remove("fa-play");
+    playPauseBtn.classList.add("fa-pause");
 }
