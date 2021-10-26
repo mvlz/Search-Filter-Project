@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((res) => {
             allMusicsData = res.data;
             renderMusics(res.data, filters);
-            playMusic(res.data);
         })
         .catch((err) => console.log(err));
 });
@@ -48,6 +47,7 @@ function renderMusics(musics, filters) {
         <button class="play-btn w-10 h-10 rounded-full  fas fa-play fa-lg absolute bottom-7 right-3" data-id="${item.id}"></button>
         `;
         musicContainer.appendChild(musicDiv);
+        playMusic(filteredMusics);
     });
 }
 searchInput.addEventListener("input", (e) => {
