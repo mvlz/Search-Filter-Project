@@ -87,6 +87,7 @@ function playMusic(musics) {
                     addPauseStyle();
                     playPauseBtn.addEventListener("click", togglePlay);
                     const lineProgress = document.querySelector(".line-progress");
+                    
                     musicPlayerTag.addEventListener('timeupdate', () => {
                         const duration = (timeToNumber(music.duration)).toFixed(2);
                         let currentTimeNum = (musicPlayerTag.currentTime).toFixed(0);
@@ -162,11 +163,15 @@ function togglePlay() {
                 break;
         }
   };
+  const equalizer = document.querySelector(".equaliser-container");
   function addPlayStyle(){
     playPauseBtn.classList.remove("fa-pause");
     playPauseBtn.classList.add("fa-play");
+    equalizer.style.display="none";
+
   }
   function addPauseStyle(){
     playPauseBtn.classList.remove("fa-play");
     playPauseBtn.classList.add("fa-pause");
+    equalizer.style.display="block";
 }
