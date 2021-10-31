@@ -230,6 +230,7 @@ body {
 .music-player {
   background-image: url("https://s3.amazonaws.com/media.thecrimson.com/photos/2021/10/18/210955_1352140.jpg");
   background-size: cover;
+  background-position: center;
   position: relative;
   overflow: hidden;
 }
@@ -243,6 +244,11 @@ body {
   z-index: -1;
 }
 
+.music-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .line {
   width: 100%;
   border-radius: 50px;

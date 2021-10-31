@@ -1,3 +1,5 @@
+import {musicData} from './musics.js';
+
 const searchInput = document.querySelector(".search-input");
 const musicContainer = document.querySelector(".musics-content");
 const categoriesBtns = document.querySelectorAll(".btn");
@@ -15,15 +17,22 @@ let allMusicsData = [];
 const filters = {
   searchItems: "",
 };
+// document.addEventListener("DOMContentLoaded", () => {
+//   axios
+//     .get("http://localhost:3000/items")
+//     .then((res) => {
+//       allMusicsData = res.data;
+//       renderMusics(res.data, filters);
+//     })
+//     .catch((err) => console.log(err));
+// });
+function getMusics(){
+  return musicData;
+}
 document.addEventListener("DOMContentLoaded", () => {
-  axios
-    .get("http://localhost:3000/items")
-    .then((res) => {
-      allMusicsData = res.data;
-      renderMusics(res.data, filters);
-    })
-    .catch((err) => console.log(err));
-});
+  allMusicsData = getMusics();
+  renderMusics(allMusicsData, filters);
+})
 
 function renderMusics(musics, filters) {
   const filteredMusics = musics.filter((music) => {
@@ -43,7 +52,7 @@ function renderMusics(musics, filters) {
     musicDiv.classList.add("music-item", "w-1/6", "rounded-xl", "relative");
     musicDiv.innerHTML = `
         <div class="music-img w-full h-3/4 overflow-hidden rounded-xl">
-            <img src=${item.image} alt="" class="w-full">
+            <img src=${item.image} alt="" class="h-full object-cover w-full">
         </div>
         <div class="music-inf w-full h-1/4 p-2 flex flex-col justify-between">
             <h3 class="music-name text-sm">${item.title}</h3>
@@ -98,7 +107,7 @@ function playMusic(musics) {
       );
       selectedMusicPlay(selectedItem);
       musicDetails(selectedItem);
-      console.log(selectedItem);
+      // console.log(selectedItem);
     });
   });
 }
@@ -124,6 +133,7 @@ function musicDetails(music) {
     lineProgress.style.width = `${playPercent}%`;
     const currentTimeMin = msConversion(currentTimeNum * 1000);
     musicPassedTime.textContent = currentTimeMin;
+    // console.log(playPercent)
     // musicPassedTime.textContent = msConversion(musicPlayerTag.currentTime * 1000);
   });
 }
@@ -131,7 +141,8 @@ function musicDetails(music) {
 function timeToNumber(number) {
   let minToSec = parseInt(number.split(":")[0] * 60);
   let sec = parseInt(number.split(":")[1]);
-  return (totalSec = sec + minToSec);
+  const totalsec = sec + minToSec;
+  return totalsec;
 }
 
 function msConversion(millis) {
