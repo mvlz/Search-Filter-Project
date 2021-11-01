@@ -59,7 +59,7 @@ export const musicData = [
         category:"hiphop",
         singer: "TM Bax",
         duration: "02:53",
-        URL:"http://s4.topseda.ir/nevisande/neda//99/11/12/ TM Bax/ TM Bax - Oxygen 128.mp3",
+        URL:"https://dawnload.sabalanmusic.ir/99/11/TM Bax - Oxygen [128].mp3",
         image: "https://www.topseda.ir/wp-content/uploads/2021/01/%20TM%20Bax%20-%20Oxygen.jpg"
       },
       {
@@ -95,7 +95,7 @@ export const musicData = [
         category:"rap",
         singer: "Yas ft. Moer",
         duration: "05:22",
-        URL:"http://www.s4.topseda.ir/nevisande/ali/music/96/12/27/Yas%20-%20Bande%20Naaf%20Ta%20Khatte%20Saaf%20%28Ft%20Moer%29%5b128%5d.mp3",
+        URL:"https://s1.pr3m.ir/Music/1399/4/21/Yas%20-%20Bande%20Naaf%20Ta%20Khatte%20Saaf..mp3",
         image: "https://www.topseda.ir/wp-content/uploads/2018/03/photo_2018-03-17_21-03-50-400x400.jpg"
       },   {
         id: 12,
