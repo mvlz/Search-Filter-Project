@@ -49,7 +49,7 @@ function renderMusics(musics, filters) {
 
   filteredMusics.forEach((item) => {
     const musicDiv = document.createElement("div");
-    musicDiv.classList.add("music-item", "w-1/6", "rounded-xl", "relative");
+    musicDiv.classList.add("music-item", "w-36", "rounded-xl", "relative");
     musicDiv.innerHTML = `
         <div class="music-img w-full h-3/4 overflow-hidden rounded-xl">
             <img src=${item.image} alt="" class="h-full object-cover w-full">
